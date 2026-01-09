@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block form_type %}
+    <form action="/deleteStory" method = "get">
+    <fieldset>
+        <p>Disclaimer: The action you are about to do is <em>delete</em> one entire story.
+        One story can take weeks for one reporter to find and follow. Mull over the amount of
+        interviews they had to perform. Ponder the hours they spent analyzing an issue to
+        find the root of the problem, and the constructive power that was used to provide a
+        possible solution. These words not only have the power to inform, but also to
+        motivate actions, or reignite passions.</p>
+        <p>As an alternative, you can 'delete' specific parts of the story, and replace them with
+        your crucial edits.</p>
+        <p>If you understand these risks and wish to proceed, click the checkbox below:</p>
+        <input type="checkbox" name="user-agreement" id="user-agreement" required>
+        <label for="user-agreement">I agree</label>
+    </fieldset>
+        <fieldset>
+            <label for="deletion-field">Enter the priority number for the story you want to delete: </label><br>
+            <input type = "number" name='deletion-number' id="deletion-field" min="1" max = {{ allStoriesLength }}>
+            <div id="preview"></div>
+        </fieldset>
+        <button type="submit" id="submit" hidden>Confirm Deletion</button>
+    </form>
+    <style>
+    em{
+        text-shadow: 2px 1px cadetblue;
+    }
+    </style>
+    <script>
+    //Custom popover behavior
+    const check = document.querySelector("#user-agreement");
+    const submit = document.querySelector("#submit");
+    check.addEventListener("change", (e)=>e.target.checked ? submit.removeAttribute("hidden"): submit.setAttribute("hidden", true));
+
+        async function update() {
+            const input = document.querySelector("#deletion-field");
+            const prev = document.querySelector("#preview");
+            let title = "";
+            if (input.checkValidity()) {
+                try {
+                    const titleStream = await fetch(`../retrieve/${input.value}/title`)
+                        .then((res)=>!res.ok? new Error(res.statusText): res.body);
+                    const reader = titleStream.getReader();
+                    const decoder = new TextDecoder();
+                    let finished = false;
+                    while (!finished) {
+                        const response = await reader.read();
+                        if (response["done"]) finished = true;
+                        else {
+                            title += decoder.decode(response["value"]);
+                        }
+                    }
+                }catch{
+                    title = "There was an error with fetching your preview, try again.";
+                }
+            }else {
+                title = "Invalid value for the priority number";
+                console.log(input.value);
+            }
+            prev.textContent = title;
+        }
+        document.querySelector("#deletion-field").addEventListener("change", update);
+    </script>
+{% endblock %}
+{% block content %}
+	<h1>Content will load once you finish the form</h1>
+{% endblock %}

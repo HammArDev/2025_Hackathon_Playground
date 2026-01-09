@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ category }}</h1>
+    <section id="articles-container">
+
+    </section>
+    <style>
+        #articles-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 5%;
+        }
+    </style>
+{% endblock %}
+{% block form_type %}
+    <form class="pop-up" id="action-query" action="http://127.0.0.1:8000/change" method="post">
+        <button type="button" class="close">X</button>
+        <h4>What action do you want to perform?</h4>
+        <label for="actions-select">I want to </label>
+        <br>
+        <select name="actions" id="actions-select">
+            <option value=" ">------</option>
+            <option value="Edit">Edit</option>
+            <option value="Delete">Delete</option>
+            <option value="Add">Add</option>
+        </select>
+        <p>a story</p>
+        <button type="submit" id="submit">Next</button>
+        {%if value%}
+            <p>This is awesome</p>
+        {%else%}
+            <p>This is fantastic!</p>
+        {%endif%}
+    </form>
+{% endblock %}
+{% block scripts %}
+    <script src="../static/filter.js" title={{ category }} color={{ color }}></script>
+{% endblock %}

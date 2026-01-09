@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content%}
+    <div class="wrapper">
+        <h1>Random News Network</h1>
+    </div>
+    <article>
+    <p>We started the Random Network with one goal in mind: To inform our subscribers about this
+        ever-changing world.
+    </p>
+        <p><em>Hearst Sandwhich</em>, our company's founder, started off in a well-to-do
+        family. She recieved the highest quality education in liberal arts, and enriched her academics
+        with multiple extracurriculars, like the Speech and Debate Club, or the Key Club.</p>
+        <p>She started her career in MSN, where she served as a journalist. Viewers praised her reporting style as being <em>'funny enough to lighten my day'</em> and <em>'as entertaining as my favorite TV show'</em>. Despite her affluent background,
+    she preferred to cover the alternative stories that served as expository pieces into the struggles of the working class. Her journalism toppled corruption in local governments, and sparked support for forest conservation, sustainable practices,
+    and the local sports teams. After garnering enough experience, her unwavering dedication towards the viewers launched her into creating her own news network.
+    At the company headquarters, she prefers to spend her time training the new interns. In the evening, she enjoys tea gatherings while the team of editors, including herself, clack away on their keyboards.
+    During the monthly releases, she magnanimously burns the midnight oil with her toiling teammates. </p>
+    <p>All the reporters, journalists, artists, and anchors collaborate on providing you with the latest news. We ensure to include rich, intriguing insights,
+    . Furthermore, we ambitiously strive to print the truth in our articles. And, unlike other news networks, we embed <em>quality</em> revisits to past information,
+    offering additional insights, and lasting reminders, of past events. We attempt to follow up on the many questions that arise from developing stories, and attempt to answer
+    the questions our audience offers in both the comments section, and 'extension' articles</p>
+    <p>We value: </p>
+    <ul>
+        <li><em>Prose</em></li>
+        <li><em>Precision</em></li>
+        <li><em>Polity</em></li>
+        <li><em>Progress</em></li>
+    </ul>
+    <p>And, most importantly, our <em>viewers</em></p>
+    <figure>
+        <img alt="Our CEO unpacking the latest newsbits and articles" src="../static/pexels-tima-miroshnichenko-5717309.jpg">
+        <figcaption>Our CEO unpacking the latest newsbits and articles<br><small>Taken by: Tima Miroshnichenko</small></figcaption>
+    </figure>
+    </article>
+    <div class="wrapper">
+    </div>
+    <style>
+    .wrapper{
+        background-image: url("../static/texture.png");
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    article{
+        font-family: helvetica, serif;
+        font-size: 25px;
+        line-height: 1.4em;
+        background-color: white;
+    }
+    em{
+        text-shadow: 2px 1px cadetblue;
+    }
+    figure img{
+        width: 700px;
+        height: auto;
+    }
+    </style>
+{% endblock %}
+{% block form_type %}
+	<form class="pop-up" id="action-query" action="http://127.0.0.1:8000/edit" method="post">
+        <button type="button" class="close">X</button>
+        <h4>What action do you want to perform?</h4>
+        <label for="actions-select">I want to </label>
+        <br>
+        <select name="actions" id="actions-select">
+            <option value=" ">------</option>
+            <option value="Edit">Edit</option>
+            <option value="Delete">Delete</option>
+            <option value="Add">Add</option>
+        </select>
+        <p>a story</p>
+        <button type="submit" id="submit">Next</button>
+        {%if value%}
+            <p>This is awesome</p>
+        {%else%}
+            <p>This is fantastic!</p>
+        {%endif%}
+    </form>
+{% endblock %}

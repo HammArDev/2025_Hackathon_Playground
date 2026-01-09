@@ -1,0 +1,40 @@
+{
+    "sources": ["CNN", "RT", "Fox News"],
+    "stories":[{
+        "title": "Zelensky has a Nazi problem. He can't lie his way out of it",
+        "description": "Facts and numbers make his Russia-Hitler comparisons laughably hypocritical",
+        "story": "Anniversaries can be opportunities. For better or worse. In the case of the recent anniversary of Nazi Germany's massive attack on the Soviet Union of 22 June 1941 - code-named Operation Barbarossa by the Germans - Ukraine's beyond best-by-date president Vladimir Zelensky went for the worst. Using his own Telegram channel, Zelensky shared his bizarre view of why that anniversary mattered. In short, because it can serve in the information war against Russia.\n\n'Eighty years ago,' the Kiev regime leader wrote, ''the world overcame Nazism and swore 'Never again.' But today Russia is repeating the crimes of the Nazis[...] Now Ukrainians are fighting against rashism [a pejorative term fusing the words 'Russia' and 'fascism'] with the same courage with which our ancestors defeated Nazism...''\n\nWhere to begin? Why not with the obvious: IF Russia were following Nazi examples, then much of Ukraine would now look like, for instance, Gaza. And while every death is a tragedy, the numbers of Ukrainian civilians killed in the Ukraine War would be of an entirely different order of magnitude.\n\nThis is not a matter of opinion. It's a fact that can be quantified and proven: As of the end of May, the UN counted about 13,279 Ukrainian civilians killed, since the beginning of the large-scale fighting in February 2022. It is true that the UN also warns that these are conservative, minimum figures.",
+        "priority": 1,
+        "category": "Politics",
+        "author": "Tarik C. Amar",
+        "length": 3.9
+    }
+    ,{
+        "title": "Banning Plastic Bags Works to Limit Shoreline Litter, Study Finds",
+        "description": "Using crowdsourced data from shore cleanups, researchers found that areas that enacted plastic bag bans or fees had fewer bags littering their lakes, rivers and beaches than those without them.",
+        "story": "At tens of thousands of shoreline cleanups across the United States in recent years, volunteers logged each piece of litter they pulled from the edges of lakes, rivers and beaches into a global database.\n\nOne of the most common entries? Plastic bags.\n\nBut in places throughout the United States where plastic bags require a fee or have been banned, fewer bags end up at the water's edge, according to research published Thursday in Science.\n\nLightweight and abundant, thin plastic bags often slip out of trash cans and recycling bins, travel in the wind and end up in bodies of water, where they pose serious risks to wildlife, which can become entangled or ingest them. They also break down into harmful microplastics, which have been found nearly everywhere on Earth.\n\nUsing data complied by the nonprofit Ocean Conservancy, researchers analyzed results from 45,067 shoreline cleanups between 2016 to 2023, along with a sample of 182 local and state policies enacted to regulate plastic shopping bags between 2017 and 2023.",
+        "priority": 2,
+        "category": "Environment",
+        "author": "Christina Kelso",
+        "length": 5.25
+    },
+    {
+        "title": "Florida State QB Tommy Castellanos 'Doesn't See' Alabama Stopping Him",
+        "description": "Feeling confident",
+        "story": "James' performance pushed him ahead of Castellanos on the depth chart and, to deal with that decision to change quarterbacks, Castellanos took some time away from the team, while James finished out the season as the starter and led the Eagles to a Bowl Game.\n\nThat Syracuse game ended up being Castellanos' last for Boston College. Now, he's got a fresh start at Florida State, where he's trying to make some waves, and introduce himself to the Seminoles' biggest opponent well before the season even starts.  ",
+        "priority": 3,
+        "category": "Sports",
+        "author": "FOX Sports",
+        "length": 2.25
+    },
+    {
+        "category": "Politics",
+        "title": "Debatable: The Rise of Debate Clubs in High Schools",
+        "description": "Miscelleneous",
+        "story": "Lorem ispum dolor sit amet",
+        "author": "Ham Sandwhich",
+        "priority": 4,
+        "length": 1
+    }
+        ]
+}

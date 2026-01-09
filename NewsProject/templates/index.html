@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block form_type %}
+    <form class="pop-up" id="action-query" action="http://127.0.0.1:8000/change" method="post" hidden>
+        <button type="button" class="close">X</button>
+        <h4>What action do you want to perform?</h4>
+        <label for="actions-select">I want to </label>
+        <br>
+        <select name="actions" id="actions-select">
+            <option value=" ">------</option>
+            <option value="Edit">Edit</option>
+            <option value="Delete">Delete</option>
+            <option value="Add">Add</option>
+        </select>
+        <p>a story</p>
+        <button type="submit" id="submit">Next</button>
+        {%if value%}
+            <p>This is awesome</p>
+        {%else%}
+            <p>This is fantastic!</p>
+        {%endif%}
+    </form>
+{% endblock %}
+{% block scripts %}
+    <script src = "../static/index.js"></script>
+{% endblock %}
+{% block content %}
+	<div id="article-container">
+        <header id="top-three">
+            <article class="podium 2">
+                <h2 class="title"></h2>
+                <img src="https://static01.nyt.com/images/2025/06/19/science/19cli-plastic-bags/19cli-plastic-bags-superJumbo.jpg?quality=75&auto=webp" alt="A seagull examining a plastic bag with a watermelon inside">
+                <p class="author"></p>
+                <p class="description"></p>
+                <p class="length"></p>
+            </article>
+            <article class="podium 1">
+                <h2 class="title"></h2>
+                <img src="https://mf.b37mrtl.ru/files/2025.06/l/68596bcf203027651037d784.jpg" alt="Russian soldiers parading on the Red Square after the German defeat">
+                <p class="author"></p>
+                <p class="description"></p>
+                <p class="length"></p>
+            </article>
+            <article class="podium 3">
+                <h2 class="title"></h2>
+                <img src="https://cdn.vox-cdn.com/thumbor/ujA_MOZQ5CPE-YCBN6kYM4mxnno=/0x0:2934x1602/1200x800/filters:focal(1266x593:1734x1061)/cdn.vox-cdn.com/uploads/chorus_image/image/73873318/Screenshot_2025_01_28_at_3.45.43_PM.0.png" alt="Tommy Castellanos, a new quarterback for Florida State">
+                <p class="author"></p>
+                <p class="description"></p>
+                <p class="length"></p>
+            </article>
+        </header>
+    </div>
+{% endblock %}

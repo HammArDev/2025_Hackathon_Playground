@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Hearst Sandwhich">
+    <link rel="icon" href="../static/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/index.css">
+    <title>Random News Network</title>
+</head>
+<body>
+    <header id="part1">
+        <a href="http://127.0.0.1:8000/"><h1 >RNN</h1></a>
+        <div class="tooltip" hidden>Home Page</div>
+        <button id="log-in">Log In</button>
+        <button id="sign-up">Sign up</button>
+    </header>
+    <header id="nav-bar">
+        <button>About</button>
+        <button class="wide">Sports</button>
+        <button class="wide">Environment</button>
+        <button class="wide">Politics</button>
+        <button id="edit-button">Edit</button>
+    </header>
+    {% block form_type %}
+
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+    <script src="../static/base.js"></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+</html>

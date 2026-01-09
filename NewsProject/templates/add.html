@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block form_type %}
+	<form>
+{#        <button type="button" class="close">X</button>#}
+        <label for="author-input">Who are your contributors?</label><br>
+        <input type="text" id="author-input" name="author-input" required><br>
+        <label for="title-input">What's the title of your story?</label><br>
+        <input type="text" id="title-input" name="title-input" autocapitalize="words" required><br>
+        <label for="priority-input">What's the priority of the story, when compared to all the others?</label><br>
+        <!--For the future: Make this a slider -->
+        <input type="number" min="0" max="{{ allStoriesLength + 1 }}" id="priority-input" name="priority-input" required><br>
+        <label for="category-input">Where does your story belong?</label><br>
+        <select id="category-input" name="category-input">
+            <option name="category-input" value="" selected>-----</option>
+            <option name="category-input" value="Sports">Sports</option>
+            <option name="category-input" value="Environment">Environment</option>
+            <option name="category-input" value="Politics">Politics</option>
+        </select><br>
+        <!--Parking Lot--Allow the user to link their story with a txt file url, or let them
+         drop in a file-->
+        <label for="description-input">Type a description</label><br>
+        <input type="text" id="description-input" name="description-input" placeholder="Keep it between 10-30 words" required><br>
+        <label for="story-input">Type your story, or a link to it, here</label><br>
+        <!--Parking lot: Add an estimated reading count -->
+        <textarea name="story-input" id="story-input" required></textarea><br>
+        <button type="submit" id="add-submit">Submit Story</button><br>
+    </form>
+    <style>
+    input.active{
+        border-style: outset;
+        border-color: tomato;
+        border-width: 2px;
+    }
+    :valid{
+        border-style: solid;
+        border-color: black;
+        border-width: 0;
+    }
+    :focus:invalid{
+        border-color: cadetblue;
+        border-width: 4px;
+        border-style: outset;
+    }
+    </style>
+{% endblock %}
+{% block content %}
+	<h1>Content will load once you finish adding your story</h1>
+{% endblock %}
+{% block scripts %}
+    <script src="../static/add.js"></script>
+{% endblock %}

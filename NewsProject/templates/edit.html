@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block form_type %}
+	<form>
+    <section id="change-elements">
+        <fieldset>
+            <p>You are about to edit someone else's story. Before you proceed,
+            we want you to consider the original purpose of the author. What was
+            their tone? What aspects of their personality could you feel through their
+            writing? Before you edit/extend this piece, ensure that you preserve the
+            fortes of their style. If you want to add a comment of your own, do so at
+            the bottom of their story.</p>
+        </fieldset>
+        <label for="priority">What's the priority of the story you want to edit?</label>
+        <input id="priority" type="number" min="1" max={{ allStoriesLength }}><br>
+        <button type="button" id="priority-confirm">Confirm Selection</button>
+        <output>Current priority-numbered story: 1</output>
+        <h3>What element(s) of it do you want to change?</h3><br>
+        <input type="checkbox" name="element-choice" value="title" id="title">
+        <label for="title">Title</label><br>
+        <input type="checkbox" name="element-choice" value="author" id="author">
+        <label for="author">Author</label><br>
+        <input type="checkbox" name="element-choice" value="description" id="description">
+        <label for="description">Description</label><br>
+        <input type="checkbox" name="element-choice" value="story" id="story">
+        <label for="story">Story</label><br>
+        <input type="checkbox" name="element-choice" value="category" id="category">
+        <label for="category">Category</label><br>
+        <label for="new-priority">Would you like to change the priority of the story?
+        <br><i>Note: It'll be swapped with the story at your new number</i></label>
+        <input type="checkbox" name="element-choice" id="new-priority" value="new-priority">
+    </section>
+    <section id="live-editing">
+
+    </section>
+    <button type="submit" id="change-elements-submit">Submit Changes</button>
+    </form>
+{% endblock %}
+{% block scripts %}
+    <script src="../static/edit.js" max={{allStoriesLength}}></script>
+{% endblock %}
+{% block content %}
+    <h1>Content will load once you finish editing</h1>
+{% endblock %}

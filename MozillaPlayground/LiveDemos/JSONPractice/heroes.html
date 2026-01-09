@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+
+      <header>
+
+      </header>
+
+      <section>
+
+      </section>
+
+      <script>
+        async function generate(){
+            const url = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+            const request = new Request(url);
+            const response = await fetch(request);
+            const superheroes = await response.json();
+            console.log("successful!");
+            populateHeader(superheroes);
+            populateHeroes(superheroes);
+        }
+        function populateHeader(supes){
+            const header = document.querySelector("header");
+            const title = document.createElement("h1");
+            title.textContent = supes.squadName;
+            const titleSidekick = document.createElement("p");
+            titleSidekick.textContent = `Hometown: ${supes.homeTown} // Formed: ${supes.formed}`;
+            header.appendChild(title);
+            header.appendChild(titleSidekick);
+        }
+        function populateHeroes(supes){
+            //Reference to the section we'll populate
+            const sect = document.querySelector("section");
+            const heroes = supes.members;
+            for(const hero of heroes){
+                //Create fields
+                const card = document.createElement("article");
+                const nameField = document.createElement("h2");
+                const ageField = document.createElement("p");
+                const identityField = document.createElement("p");
+                const listField = document.createElement("ul");
+
+                //Populate them
+                nameField.textContent = `${hero.name}`;
+                ageField.textContent =  `Age: ${hero.age}`;
+                identityField.textContent =  `Secret Identity: ${hero.secretIdentity}`;
+                listField.textContent = "Superpowers: ";
+                for(const power of hero.powers){
+                //For the list, we'll populate it with each superpower
+                    const powerField = document.createElement("li");
+                    powerField.textContent = power;
+                    listField.appendChild(powerField);
+                }
+                //Add them to the page
+                card.appendChild(nameField);
+                card.appendChild(identityField);
+                card.appendChild(ageField);
+                card.appendChild(listField);
+                sect.appendChild(card);
+            }
+        }
+        generate();
+      </script>
+  </body>
+</html>

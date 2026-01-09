@@ -1,0 +1,84 @@
+body{
+    background-color: aquamarine;
+}
+h1{
+    font-family: fantasy;
+    font-weight: lighter;
+    font-style: italic;
+    border-radius: 5px;
+    border-style:double;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    width: fit-content;
+    margin: 5px;
+}
+.picker{
+    border-top: 4px dotted maroon;
+    font-family:Calibri, sans-serif;
+    font-size: 11px;
+}
+.picker :first-child{
+    font-size: 16px;
+    font-weight: 200%;
+    background-color: blue;
+    text-decoration: italic;
+    font-family: monospace;
+    width: fit-content;
+}
+.inputs div{
+    padding-bottom: 5px;
+}
+section{
+    padding-bottom: 20px;
+}
+.description{
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    background-image: url("texture.png");
+    height: 90px;
+}
+.description p{
+    font-weight: lighter;
+    color: lightgray;
+    font-family: cursive;
+    background-repeat: repeat-x;
+    background-color: rgb(26, 118, 155);
+    height: fit-content;
+    margin: 0px;    
+}
+.inputs section{
+    width: 40%;
+}
+input{
+    margin-right: 10px;
+}
+#nationality-bar{
+    background-image: url("texture.png");
+    background-repeat: repeat-x;
+    height: 30px;
+    margin-bottom: 3px;
+}
+#generate-story{
+    width: 170px;
+    height: 40px;
+    color: cornsilk;
+    background-color: deepskyblue;
+    border-style: inset;
+    border-width: 2px;
+    border-color: cadetblue;
+    font-style: italic;
+    font-size:1.2em;
+    font-family: cursive;
+}
+.hidden{
+    display: none;
+}
+#reset{
+    color: white;
+    background-color: red;
+    border: 2px dotted white;
+    position: relative;
+    left: 20px;
+    height: 40px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Silly Story Generator</title>
+        <meta name="author" content="Ham & Mozilla">
+        <meta name="description" content="Will generate a customizable, silly Story">
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Silly, custom, random">
+        <link rel="stylesheet" href="story.css">
+    </head>
+    <body>
+        <h1>Silly Story Generator</h1>
+        <section class="description">
+            <p>In this webpage, you can generate a random, silly story. It'll adapt to your nationality and identity.</p>
+        </section>
+        <section class="inputs">
+            <!--Indicates the user's nationality. Use a background with repeat-x set-->
+            <div id="nationality-bar"></div>
+            <div class="picker" id="nationality">
+                <p>What's your nationality: </p>
+                <label for="US">US</label>
+                <input type="radio" name="ukus" value="US" id="US" checked>
+                <label for="UK">UK</label>
+                <input type="radio" name="ukus" value="UK" id="UK">
+            </div>
+            <div class="picker" id="name">
+                <p>And who's featured in this story?</p>
+                <input type="text" id="nameField" minlength=1>
+            </div>
+            <!--TODO Change 'fall' to 'autumn' for British English-->
+            <div class="picker" id="season">
+                <p>What's your favorite season?</p>
+                <label for="spring">Spring</label>
+                <input type="radio" id="spring" name="season" value="spring" checked>
+                <label for="summer">Summer</label>
+                <input type="radio" id="summer" name="season" value="summer">
+                <label for="fall">Fall</label>
+                <input type="radio" id="fall" name="season" value="fall">
+                <label for="winter">Winter</label>
+                <input type="radio" id="winter" name="season" value="winter">
+            </div>
+            <div class="picker" id="objects">
+                <p>Choose some objects to be featured in your story: </p>
+                <label for="onion">Onion</label>
+                <input type="checkbox" name="objects" value="onion" id="onion">
+                <label for="rug">Rug</label>
+                <input type="checkbox" name="objects" value="rug" id="rug">
+                <label for="pig">Pig</label>
+                <input type="checkbox" name="objects" value="pig" id="pig">
+                <label for="raven">Raven</label>
+                <input type="checkbox" name="objects" value="raven" id="raven">
+                <label for="scarecrow">Scarecrow</label>
+                <input type="checkbox" name="objects" value="scarecrow" id="scarecrow">
+            </div>
+            <button id="generate-story" type="submit">Generate Story</button>
+            <button id="reset" type="reset">Reset</button>
+        </section>
+        <p class="output" id="story"></p>
+        <footer>Credits
+            <ul>
+                <a href="https://123FreeVectors.com" target="_blank"><li>Striped Background</li></a>
+                <a href="https://en.wikipedia.org/wiki/File:Flag_of_the_United_States.svg"><li>American Flag</li></a>
+                <a href="https://en.wikipedia.org/wiki/File:Flag_of_the_United_Kingdom.svg"><li>British Flag</li></a>
+            </ul>
+        </footer>
+        <script src="story.js"></script>
+    </body>
+</html>

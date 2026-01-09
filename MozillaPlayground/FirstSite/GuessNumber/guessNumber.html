@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta title="FreeLance Subpage">
+        <meta name="author" content="Ham Sandwhich">
+        <meta name="desription" content="Just a subpage, nothing special">
+        <link type="stylesheet" href="guessNumber.css">
+    </head>
+    <body>
+        <h1 id="title">Guess The Number Game</title>
+        <h3 id="description">I'm thinking of a number between 1 and 100. Try and guess it, and<br>
+        I'll tell you if it's <em font-weight="bold">high</em> or <em>low</em></h3>
+        <div>
+            <label for="guess">Your guess: </label>
+            <input id="guess" type="number" min="1" max = "100" placeholder="Any integer from 1 and 100"></input>
+            <button id="submit" type="submit">Submit</button>
+        </div>
+        <div class="outputPara">
+            <p class="guessRecord">Previous Guesses: </p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+        </div>
+        <a href="../index.html"><img src="../Resources/64px-Home_Creative_Tail.svg.png" class="home-button"></a>
+        <script src="guessNumber.js"></script>
+    </body>
+</html>

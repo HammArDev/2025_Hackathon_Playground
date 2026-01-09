@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Original creators--luv2027, bsmth from Mozilla">
+    <title>Function start</title>
+    <style>
+      .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 242px;
+        background: #eee;
+        border:2px #aaa;
+        padding-left: 20px;
+        background-position: 25px center;
+        background-repeat: no-repeat;
+      }
+
+      .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
+        border-color: gray;
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: #aaa;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button>Display message box</button>
+    <input class='convertible-text' nametype="number" placeholder="Custom name goes here">
+    <script>
+        const btn = document.querySelector('button');
+        btn.addEventListener('click', ()=>displayMessage("Why hello there", "alert"));
+        function displayMessage(msgText = "This is a message box", msgType = " "){
+            const body = document.body;
+            const panel = document.createElement('div');
+            panel.setAttribute('class', 'msgBox');
+            body.appendChild(panel);
+            switch(msgType){
+                case "alert":
+                    panel.style.backgroundColor='Crimson';
+                    panel.style.backgroundImage='url(Icons/warning.png)';
+                    panel.style.paddingLeft='82px';
+                    break;
+                case "affirmation":
+                    panel.style.backgroundColor='Aquamarine';
+                    break;
+                case "status":
+                  panel.style.backgroundColor = 'Azure';
+                  break;
+                case "low-power":
+                  panel.style.backgroundColor = 'yellow';
+                  break;
+                case "chat":
+                  panel.style.backgroundColor = 'Aqua';
+                  panel.style.backgroundImage='url(Icons/chat.png)';
+                  panel.style.paddingLeft='82px';
+                  break;
+                default:
+                  panel.style.backgroundColor = 'white';
+                  break;
+            }
+
+            const msg = document.createElement('p');
+            msg.textContent = msgText;
+            panel.appendChild(msg);
+
+            const closeBtn = document.createElement('button');
+            closeBtn.textContent='X';
+            panel.appendChild(closeBtn);
+            closeBtn.addEventListener('click', ()=>panel.parentNode.removeChild(panel));
+        }
+
+    </script>
+    <script>
+      btn.addEventListener('focus', bgChange);
+      function bgChange(){
+        document.body.style.backgroundColor = `rgb(${randomize(255)}, ${randomize(255)}, ${randomize(255)})`;
+      }
+      function randomize(max){
+        return Math.floor(Math.random()*max)+1;
+      }
+    </script>
+    <script>
+      //This function converts the text into pig latin
+      //I tried to take care of punctuation, too
+      const messageField = document.querySelector('.convertible-text');
+      messageField.addEventListener('change',(e)=>handler(e));
+      messageField.addEventListener('keydown',(e)=>e.key==="Enter"? console.log(e.target.value): undefined);
+      function handler(e){
+        const message = e.target.value;
+        let words = message.split(" ");
+        const newMessageArray = words.map(toPigLatin);
+        const newMessage = newMessageArray.join(" ") + '.';
+        console.log(newMessage);
+        messageField.value=newMessage;
+      }
+      function toPigLatin(word){
+        if(word.length===1) return word;
+        else if(isPunctuation(word.charAt(word.length-1))&&word.length===2) return word;
+        else if(isPunctuation(word.charAt(word.length-1))){
+          return word.slice(1, word.length-1); + word.charAt(0) + "ay" + word.charAt(word.length-1);
+        }else{
+          return word.slice(1) + word.charAt(0) + "ay";
+        }    
+      }
+      function isPunctuation(char){
+        switch(char){
+          case '?':
+            return true;
+            break;
+          case '!':
+            return true;
+            break;
+          case '.':
+            return true;
+            break;
+          case ',':
+            return true;
+            break;
+          default:
+            return false;
+        }
+      }
+    </script>
+  </body>
+</html>

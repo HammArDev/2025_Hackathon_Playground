@@ -1,0 +1,51 @@
+p{
+    font-family: serif;
+    font-size: 20px;
+    font-weight: 200;
+}
+#mail-link{
+    font-family: cursive;
+    color: green;
+    font-weight: lighter;
+}
+.contact-header{
+    font-style: italic;
+}
+.Name{
+    border-bottom:13px purple dotted;
+    color: hotpink;
+}
+li{
+    font-family: cursive;
+    font-size: 18px;
+    font-weight: lighter;
+    padding: 2px;
+}
+.hobby-container{
+    background: DarkSalmon;
+    color: white;
+    margin: 10px;
+}
+.projects-container{
+    background: rgb(100, 100, 200);
+    color: aqua;
+}
+h3{
+    text-decoration: underline;
+}
+dd{
+    color: orange;
+    margin: 5px;
+}
+dl{
+    font-family: sans-serif;
+}
+dt:nth-child(2){
+    background: rgb(100, 100, 256);
+}
+dt{
+    font-family: fantasy;
+}
+.contact-box{
+    border: 5px solid purple;
+}
